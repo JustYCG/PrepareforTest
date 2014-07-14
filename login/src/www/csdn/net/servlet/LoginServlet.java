@@ -24,7 +24,6 @@ public class LoginServlet extends HttpServlet {
 		}else{
 			request.setAttribute("user", entity);
 			request.getRequestDispatcher("./index.jsp").forward(request, response);
-
 		}
 	}
 

@@ -20,7 +20,6 @@ public class UserDaoImpl implements UserDao {
 		try {
 			con = DBManger.getConnection();
 			String sql = "select id,name,pass,logintime from user where name = ? and pass=? ";
-			System.out.println(sql);
 			ps = con.prepareStatement(sql);
 			int index = 1;
 			ps.setString(index++, name);
@@ -68,13 +67,11 @@ public class UserDaoImpl implements UserDao {
 		boolean flag = false;
 		Connection con = null;
 		PreparedStatement ps = null;
-
 		try {
 			con = DBManger.getConnection();
 			String name = entity.getName();
 			String sql = "delete from user where name=?";
 			ps = con.prepareStatement(sql);
-			System.out.println(sql);
 			int index = 1;
 			ps.setString(1, name);
 			int n = ps.executeUpdate();
